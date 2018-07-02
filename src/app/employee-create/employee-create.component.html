@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>Add New Employee</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveEmployee()" #employeeForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Gender</label>
+          <select id="gender" name="gender" [(ngModel)]="employee.gender" class="form-control" required>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="employee.email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Phone</label>
+          <input type="tel" class="form-control" [(ngModel)]="employee.phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Date Of Birth</label>
+          <input type="date" name="dateOfBirth" [ngModel]="employee.dateOfBirth | date: 'yyyy-MM-dd'" (ngModelChange)="employee.dateOfBirth = $event"
+            [value]="employee.dateOfBirth | date: 'yyyy-MM-dd'" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" name="department" [(ngModel)]="employee.department" class="form-control" required>
+            <option value="1">Help Desk</option>
+            <option value="2">HR</option>
+            <option value="3">IT</option>
+            <option value="4">Payroll</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!employeeForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

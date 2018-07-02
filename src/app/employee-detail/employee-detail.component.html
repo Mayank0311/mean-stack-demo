@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <h1>{{ employee.name }}</h1>
+    <dl class="list">
+      <dt>Gender</dt>
+      <!-- <dd>{{ employee.gender }}</dd> -->
+      <dd [ngSwitch]="employee.gender">
+        <span *ngSwitchCase="1"> Male </span>
+        <span *ngSwitchCase="2"> Female </span>
+        <span *ngSwitchDefault> N/A </span>
+      </dd>
+      <dt>Phone</dt>
+      <dd>{{ employee.phone }}</dd>
+      <dt>Email</dt>
+      <dd>{{ employee.email }}</dd>
+      <dt>Date of Birth</dt>
+      <dd>{{ employee.dateOfBirth | date: 'yyyy-MM-dd' }}</dd>
+      <dt>Department</dt>
+      <dd [ngSwitch]="employee.department">
+        <span *ngSwitchCase="1"> Help Desk </span>
+        <span *ngSwitchCase="2"> HR </span>
+        <span *ngSwitchCase="3"> IT </span>
+        <span *ngSwitchCase="4"> Payroll </span>
+        <span *ngSwitchDefault> N/A </span>
+      </dd>
+      <!-- <dd>{{ employee.department }}</dd> -->
+    </dl>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a [routerLink]="['/employee-edit', employee._id]" class="btn btn-success">EDIT</a>
+      <button class="btn btn-danger" type="button" (click)="deleteEmployee(employee._id)">DELETE</button>
+    </div>
+  </div>
+</div>

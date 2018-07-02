@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Employee List
+    <a [routerLink]="['/employee-create']" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date Of Birth</th>
+        <th>Department</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let i=index">
+        <td>{{ employee.name }}</td>
+        <td [ngSwitch]="employee.gender">
+          <span *ngSwitchCase="1"> Male </span>
+          <span *ngSwitchCase="2"> Female </span>
+          <span *ngSwitchDefault> N/A </span>
+        </td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.dateOfBirth | date: 'yyyy-MM-dd' }}</td>
+        <td [ngSwitch]="employee.department">
+          <span *ngSwitchCase="1"> Help Desk </span>
+          <span *ngSwitchCase="2"> HR </span>
+          <span *ngSwitchCase="3"> IT </span>
+          <span *ngSwitchCase="4"> Payroll </span>
+          <span *ngSwitchDefault> N/A </span>
+        </td>
+        <td>
+          <a (click)="onShowDetails(i)" style="cursor: pointer;">
+              <!-- [routerLink]="['/employee-details',employee?._id]" -->
+            Show Detail
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
