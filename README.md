@@ -4,7 +4,7 @@ A MEAN Stack (Angular 5) Create-Read-Update-Delete (CRUD) Web Application.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Prerequisites
-The following tools, frameworks, and modules are required for this tutorial:
+The following tools, frameworks, and modules are required for this project:
 
 - Node.js (recommended version)
 - Angular CLI 1.7.4
@@ -15,8 +15,8 @@ The following tools, frameworks, and modules are required for this tutorial:
 - IDE or Text Editor
 
 ## Development server
-Run MongoDB server on different terminal tab or command line using `mongod`
-Run `npm start` for a dev server. Navigate to `http://localhost:3000/`.
+- Run MongoDB server on different terminal tab or command line using `mongod`
+- Run `npm start` for a dev server. Navigate to `http://localhost:3000/`
 
 ## Code scaffolding
 
